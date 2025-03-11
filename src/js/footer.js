@@ -42,11 +42,11 @@ const footerControl = () => {
                   <p class="text-lg max-w-xs text-center lg:text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt.</p>
                   <div class="flex space-x-6">
                       <!-- Facebook -->
-                      <a href="https://www.facebook.com/anmamun0" target="_blank" class="text-gray-500 hover:text-red-500 text-xl">
+                      <a href="https://web.facebook.com/robiul.hossen.457326" target="_blank" class="text-gray-500 hover:text-red-500 text-xl">
                           <i class="fab fa-facebook"></i>
                       </a>
                       <!-- LinkedIn -->
-                      <a href="https://www.linkedin.com/in/anmamun0" target="_blank" class="text-gray-500 hover:text-red-500 text-xl">
+                      <a href="https://www.linkedin.com/in/rabiul-hossen-8249b5297/" target="_blank" class="text-gray-500 hover:text-red-500 text-xl">
                           <i class="fab fa-linkedin"></i>
                       </a>
                   </div>
@@ -70,21 +70,21 @@ const footerControl = () => {
                           <span class="text-red-500">
                               <i class="fas fa-map-marker-alt"></i>
                           </span>
-                          <span>Sylhet, Bangladesh</span>
+                          <span>Chittagong, Bangladesh</span>
                       </li>
                       <li class="flex space-x-2">
                           <span class="text-red-500">
                               <i class="fas fa-globe"></i>
                           </span>
-                          <a href="https://anmamun0.vercel.app/" target="_blank" class="text-gray-600 hover:text-red-500">
-                              anmamun0.vercel.app
+                          <a href="https://my-portfolio-five-zeta-21.vercel.app/" target="_blank" class="text-gray-600 hover:text-red-500">
+                              RabiulHosen.vercel.app
                           </a>
                       </li>
                       <li class="flex space-x-2">
                           <span class="text-red-500">
                               <i class="fas fa-envelope"></i>
                           </span>
-                          <span>anmamun0@gmail.com</span>
+                          <span>robiulhossen0081@gmail.com</span>
                       </li>
                   </ul>
               </div>
