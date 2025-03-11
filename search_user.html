@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Data.Doner - Search user </title>
+  <link rel="stylesheet" href="src/css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/src/images/data.doner_icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Share+Tech+Mono&family=Space+Grotesk:wght@300..700&family=Teko:wght@300..700&display=swap"
+    rel="stylesheet">
+
+    <!-- aos animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="bg-blue-50" style=" font-family: 'Jost', serif;">
+
+  <header class="z-10"> </header>
+
+
+
+  <div class="container mx-auto py-10 px-6 mt-20">
+    <!-- Page Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-extrabold text-red-600">Blood Donor Search</h1>
+      <p class="mt-2 text-lg text-gray-600">Find the right donor by name, blood group, country, or gender.</p>
+    </div>
+
+    <!-- Search & Filters Section -->
+    <div class=" rounded-lg p-8 px-2 sm:px-12">
+      <form id="search-form" action="/search" method="GET">
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
+          <!-- Search Input -->
+          <div class="col-span-1">
+            <label for="search" class="block text-sm font-medium text-gray-700 mb-2">Search by Name/Email</label>
+            <div class="relative">
+              <input type="text" id="search" name="search" placeholder="Enter name or email"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:outline-none" />
+            </div>
+          </div>
+
+          <!-- Blood Group Filter -->
+          <div>
+            <label for="blood-group" class="block text-sm font-medium text-gray-700 mb-2">Blood Group</label>
+            <select id="blood-group" name="blood_group"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:outline-none">
+              <option value="">Select Blood Group</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+            </select>
+          </div>
+
+          <!-- Country Filter -->
+          <div>
+            <label for="district" class="block text-sm font-medium text-gray-700 mb-2">District</label>
+            <select id="district" name="district"
+              class="w-full px-4 py-3  rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:outline-none">
+              <option value="">Select District</option>
+              <option value="Sylhet">Sylhet</option>
+              <option value="Rangamati">Rangamati</option>
+              <option value="Dhaka">Dhaka</option>
+            </select>
+          </div>
+
+          <!-- Gender Filter -->
+          <div>
+            <label for="gender" class="block text-sm font-medium text-gray-700 mb-2">Gender</label>
+            <select id="gender" name="gender"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:outline-none">
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Submit and Reset Button -->
+        <div class="mt-6 text-right gap-4 text-sm">
+          <button type="button" id="search-button"
+            class="relative group overflow-hidden py-2 px-6 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition duration-300">
+            <span
+              class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-full bg-white opacity-20 group-hover:translate-x-0"></span>
+            <span class="relative">Search </span>
+
+          </button>
+
+          <button type="button" onclick="allUserProfile({})" id="reset-filters"
+            class="ml-4 px-4 py-2 bg-gray-200 text-gray-800 rounded-lg shadow  hover:bg-gray-300 transition duration-300">
+
+            Reset Filters
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+
+
+
+    <div class="py-4 px-4 sm:px-16 sm:px-6   mb-[200px]">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">User List</h2>
+
+        <ul id="user-list" class="space-y-6">
+          <!-- User Card -->
+
+          <div id="event_loading">
+            <!-- Loading Spinner -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 border-4 border-gray-300 border-t-red-500 rounded-full animate-spin"></div>
+              <p class="mt-4 text-red-600 text-lg font-semibold">Loading...</p>
+            </div>
+          </div>
+
+
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Modal Overlay -->
+    <div id="user-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <!-- Modal Content -->
+      <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
+        <!-- Close Button -->
+        <button id="close-modal" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+            class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- User Info -->
+        <div class="text-center">
+          <!-- User Image -->
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gray-200 overflow-hidden">
+            <img id="modal-user-image" src="https://via.placeholder.com/150" alt="User Avatar"
+              class="object-cover w-full h-full">
+          </div>
+          <!-- User Details -->
+          <h3 id="modal-user-name" class="text-lg font-semibold text-gray-800">John Doe</h3>
+          <p id="modal-user-username" class="text-sm text-gray-500 mb-4">@johndoe</p>
+
+          <!-- Additional Info -->
+          <div class="text-sm text-gray-600">
+            <p class="font-semibold ">Email: <span id="modal-user-email"></span></p>
+            <p id="modal-user-email" class="font-semibold mb-2">Phone: <span id="modal-user-phone"></span></p>
+
+            <p><span class="font-semibold">Blood Group:</span> <span id="modal-user-blood">A+</span></p>
+            <p><span class="font-semibold">Division:</span> <span id="modal-user-division">Dhaka</span></p>
+            <p><span class="font-semibold">Gender:</span> <span id="modal-user-gender">Male</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <footer></footer>
+
+
+    <script src="src/js/header.js"></script>
+    <script src="src/js/footer.js"></script>
+
+    <!-- <script src="src/js/doner_profile.js"></script> -->
+    <script src="src/js/logout.js"></script>
+
+    <script src="src/js/profile.js"></script>
+    <script src="src/js/search_user.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

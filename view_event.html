@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Modal</title>
+    <link rel="stylesheet" href="src/css/style.css"> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/src/images/data.doner_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-blue-50 text-white">
+    <header class="z-10"> </header>
+
+
+    <!-- Modal (Hidden by Default) -->
+    <div id="viewModal" class=" flex justify-center items-center  mt-20">
+        <div class=" text-gray-900 w-full max-w-5xl mx-auto rounded-lg  p-6 relative">
+
+
+
+            <!-- Main Grid Layout -->
+            <div class="grid grid-cols-12 gap-6">
+
+                <!-- Event Details -->
+                <div class="col-span-7 p-6 rounded-lg   ">
+                    <div class="flex items-center gap-4 pb-4 border-b">
+                        <span id="eventBlood" class="py-2 px-3 bg-red-500 text-white text-md rounded-full">O+</span>
+                        <h1 id="view_eventTitle" class="text-2xl font-semibold text-gray-800">Event Title</h1>
+                    </div>
+
+                    <!-- Event Form -->
+                    <form class="mt-6 space-y-4">
+                        <div class="grid grid-cols-2 gap-6 text-sm  ">
+                            <div>
+                                <label class="block font-medium text-gray-600">Location</label>
+                                <input type="text" id="viewLocation"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:outline-none"
+                                    disabled>
+                            </div>
+                            <div>
+                                <label class="block font-medium text-gray-600">Date</label>
+                                <input type="date" id="viewDate"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:outline-none"
+                                    disabled>
+                            </div>
+                            <div>
+                                <label class="block font-medium text-gray-600">Created By</label>
+                                <input type="text" id="viewCreatedBy"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:outline-none"
+                                    disabled>
+                            </div>
+                            <div>
+                                <label class="block font-medium text-gray-600">Time</label>
+                                <input type="text" id="viewTime"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:outline-none"
+                                    disabled>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div>
+                            <label class="block font-medium text-gray-600">Description</label>
+                            <textarea id="viewDescription" rows="6"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-gray-500 focus:outline-none"
+                                disabled></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Donor Section -->
+                <div class="col-span-5 bg-white bg-opacity-80 shadow-lg rounded-lg p-6">
+                    <form action="" id="accept_event_form" class="relative" onsubmit="acceptEventFormSubmition(event)">
+                        <!-- Donors Section -->
+                        <!-- Donor Count -->
+                        <div class="mb-4 flex justify-between items-center">
+                            <div>
+                                <h2 class="text-xl font-semibold text-gray-800">Accepted Donors</h2>
+                                <p class="text-sm text-gray-600">Total Donors: <span id="total-donors" class="font-medium text-gray-800">..</span></p>
+                                <p class="text-sm text-gray-600">Status: <span id="doner_status" class="font-medium text-red-600">..</span></p>
+                            </div>
+                    
+                            
+                        </div>
+                     
+                        <!-- Description -->
+                        <div>
+                          <label for="description" class="block text-lg font-medium text-gray-700 mb-1">Donors Description</label>
+                          <textarea id="description" name="description" rows="6"
+                            class="w-full border border-[1px] border-gray-300 px-4 py-2 mt-4 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-500"
+                            placeholder="Write your thinking and accept for donate blood" required></textarea>
+                        </div>
+
+                        <!-- Positioned Button in Top Right -->
+                        <div class="flex justify-between">
+                            <span class="text-green-600" id="accept_donation_form_loading"> </span>
+
+                            <button type="submit"  class="px-4 py-2 bg-green-500 text-white text-md rounded hover:bg-teal-600">
+                                Accept
+                            </button> 
+                        </div>
+                        
+                    </form>
+
+                    <!-- Donor List -->
+                    <div class="mt-6">
+                        <h3 class="text-lg font-semibold">Donor List</h3>
+                        <ul id="donorList" class="mt-4 space-y-2">
+                            <li class="flex items-center gap-4 text-gray-700">
+                                <div
+                                    class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+                                    N</div>
+                                <div>
+                                    <p class="font-medium">@  <span id="accepted_doner">Null</span></p>
+                                    <p class="text-sm">Blood Group:  <span id="accepted_blood">None</span></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <footer></footer>
+
+    <script src="src/js/alert/"></script>
+    <script src="src/js/header.js"></script>
+    <script src="src/js/footer.js"></script>
+    <script src="src/js/logout.js"></script>
+    <script src="src/js/view_event.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+        /* Add this to your CSS */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        #upper-header {
+            position: relative;
+            opacity: 1;
+            transform: translateY(0);
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        body {
+            padding-top: 80px;
+            /* Adjust this to prevent content from being hidden behind the fixed header */
+        }
+
+        /* When the page is scrolled */
+        body.scrolled header #upper-header {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        body.scrolled header {
+            transform: translateY(-40%);
+        }
+
+
+
+
+
+
+
+
+/* <!-- Tailwind Animations --> */
+ 
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-in {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+.animate-fade-in { animation: fade-in 1s ease-out; }
+.animate-slide-in { animation: slide-in 1s ease-out; }
+ 
+
+
+/* alert animation */
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+}
+
+.animate-slide-out-left {
+    animation: slideOutLeft 0.5s ease-out;
+}

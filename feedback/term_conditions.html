@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Terms and Conditions </title>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="../src/images/data.doner_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Share+Tech+Mono&family=Space+Grotesk:wght@300..700&family=Teko:wght@300..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="bg-blue-50" style=" font-family: 'Jost', serif;">
+    <header class="z-10"> </header>
+
+
+    <div class="max-w-7xl mx-auto p-10 mt-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg space-y-6">
+
+            <!-- Title Section -->
+            <section class="text-center">
+                <h1 class="text-3xl font-semibold text-gray-800">Terms and Conditions</h1>
+                <p class="text-lg text-gray-600 mt-4">Please review the following terms and conditions carefully.</p>
+            </section>
+
+            <!-- Content Section -->
+            <section class="md:flex gap-8">
+                <!-- Left Side Buttons -->
+                <div class="md:w-1/4 space-y-4 my-2">
+                    <!-- Button for Access Restrictions -->
+                    <button onclick="showContent(0)"
+                        class="button w-full text-left py-4 px-6 bg-gray-200 hover:bg-gray-300  hover:text-gray-800 rounded-lg text-gray-800 font-semibold">
+                        Access Restrictions
+                    </button>
+                    <!-- Button for Blood Request Notifications -->
+                    <button onclick="showContent(1)"
+                        class="button w-full text-left py-4 px-6 bg-gray-200 hover:bg-gray-300  hover:text-gray-800 rounded-lg text-gray-800 font-semibold">
+                        Blood Request Notifications
+                    </button>
+                    <!-- Button for Features -->
+                    <button onclick="showContent(2)"
+                        class="button w-full text-left py-4 px-6 bg-gray-200 hover:bg-gray-300  hover:text-gray-800 rounded-lg text-gray-800 font-semibold">
+                        Features
+                    </button>
+                    <!-- Button for General Terms -->
+                    <button onclick="showContent(3)"
+                        class="button w-full text-left py-4 px-6 bg-gray-200 hover:bg-gray-300  hover:text-gray-800 rounded-lg text-gray-800 font-semibold">
+                        General Terms
+                    </button>
+                </div>
+
+                <!-- Right Side Content -->
+                <div class="md:w-3/4 my-2">
+                    <!-- Access Restrictions Content -->
+                    <div id="access-restrictions" class="content hidden px-6 py-4 text-gray-600">
+                        <h2 class="text-2xl font-semibold text-gray-800">1. Access Restrictions</h2>
+                        <p class="text-gray-600">
+                            If you are an unauthenticated user, you cannot access the full features of the web app. As
+                            an unauthenticated user, you will not be able to:
+                        </p>
+                        <ul class="list-disc pl-6 text-gray-600">
+                            <li>Search or filter blood requests, donors, or events.</li>
+                            <li>Create new blood requests or make any updates to existing requests.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Blood Request Notifications Content -->
+                    <div id="blood-notifications" class="content hidden px-6 py-4 text-gray-600">
+                        <h2 class="text-2xl font-semibold text-gray-800">2. Blood Request Notifications</h2>
+                        <p class="text-gray-600">
+                            When a blood request is created, notifications will be sent if your blood type matches the
+                            request. Notifications will be updated instantly if a blood request is created and matches
+                            your blood type.
+                        </p>
+                    </div>
+
+                    <!-- Features Content -->
+                    <div id="features" class="content hidden px-6 py-4 text-gray-600">
+                        <h2 class="text-2xl font-semibold text-gray-800">3. Features</h2>
+                        <p class="text-gray-600">
+                            As a registered user, you will have access to the following features:
+                        </p>
+                        <ul class="list-disc pl-6 text-gray-600">
+                            <li>Search all users and filter results by blood type, country, etc.</li>
+                            <li>Search for all blood donation events and accept invitations to participate in them.</li>
+                            <li>Donate your blood or request blood from others through your account.</li>
+                            <li>Contact any user randomly in case of an urgent need for blood.</li>
+                        </ul>
+                    </div>
+
+                    <!-- General Terms Content -->
+                    <div id="general-terms" class="content hidden px-6 py-4 text-gray-600">
+                        <h2 class="text-2xl font-semibold text-gray-800">4. General Terms</h2>
+                        <p class="text-gray-600">
+                            By using this web app, you agree to comply with the terms and conditions outlined above. We
+                            reserve the right to update or modify these terms at any time without prior notice.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <div class="flex justify-center space-x-4">
+                <a href="#"
+                    class="bg-red-500 text-white py-2 px-6 rounded-lg hover:bg-red-600 transition ease-in-out duration-300">Accept</a>
+                <a href="#"
+                    class="bg-gray-300 text-gray-800 py-2 px-6 rounded-lg hover:bg-gray-400 transition ease-in-out duration-300">Decline</a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer></footer>
+
+
+    <script src="../src/js/header.js"></script>
+    <script src="../src/js/footer.js"></script>
+
+
+
+    <script>
+        // Function to show content based on button click
+        function showContent(index) {
+            const allContents = document.querySelectorAll(".content");
+            const allButtons = document.querySelectorAll(".button");
+
+            allContents.forEach((content, i) => {
+                if (i === index) {
+                    content.classList.remove("hidden");
+                    allButtons[i].classList.add("bg-red-500", "text-white");
+                    allButtons[i].classList.remove("bg-gray-200", "text-gray-800");
+                } else {
+                    content.classList.add("hidden");
+                    allButtons[i].classList.add("bg-gray-200", "text-gray-800");
+                    allButtons[i].classList.remove("bg-red-500", "text-white");
+                }
+            });
+        }
+
+        // Initialize with first content visible
+        document.addEventListener('DOMContentLoaded', () => {
+            showContent(0);
+        });
+    </script>
+</body>
+
+</html>

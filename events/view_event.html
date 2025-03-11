@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request View </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/src/images/data.doner.webp" type="image/x-icon"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Share+Tech+Mono&family=Space+Grotesk:wght@300..700&family=Teko:wght@300..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="bg-teal-50" style=" font-family: 'Jost', serif;">
+    <header class=" bg-gradient-to-r from-teal-200 to-white  shadow-md text-black text-md">
+
+        <div class="container  mx-auto flex justify-between items-center py-4 px-6 text-gray-800">
+           <!-- Logo -->
+           <a href="/index.html" class="flex items-center space-x-2 gap-4">
+            <img src="src/images/data.doner.webp" alt="" class="w-16 h-16 ">
+            <span class="text-2xl font-bold tracking-wide" style="font-family: 'Roboto Condensed', serif;">Data.Donor</span>
+        </a>
+
+
+            <div id="upper-header-authentication"> </div>
+            <div id="header-authentication"> </div>
+
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+ 
+
+<main class="justify-center mt-16 "> 
+    <div class="container px-20 py-8 m-auto">
+        <!-- Main Container -->
+        <div class="lg:grid grid-cols-12 gap-8 m-auto space-y-6 lg:space-y-0">
+            <!-- Form Section -->
+            <div class="w-full col-span-8 bg-white shadow-md rounded-lg p-8">
+                <!-- Header -->
+                <div class="flex items-center justify-between py-4 border-b">
+                    <div class="flex gap-4 items-center">
+                        <button type="button" form="create-event-form"
+                            class="px-4 py-2 bg-red-600 text-white text-xl rounded-full  ">O+</button>
+
+                        <h1 class="text-2xl font-semibold text-gray-800">Create Blood Donation Event</h1>
+
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form id="create-event-form" class="mt-6 space-y-6 pointer-events-none pb-12">
+                    <!-- Event Title -->
+
+
+                    <!-- Organizer and Location -->
+                    <div class="lg:grid grid-cols-2 gap-6">
+                        <div>
+                            <label for="location" class="block text-sm font-medium text-gray-600 mb-1">Event
+                                Location</label>
+                            <input type="text" id="location" name="location" value="Dhaka, Bangladesh"
+                                class="w-full  px-3 py-2 rounded-lg focus:outline-none " disabled>
+                        </div>
+
+                        <!-- Date and Time -->
+                        <div>
+                            <label for="date" class="block text-sm font-medium text-gray-600 mb-1">Event Date</label>
+                            <input type="date" id="date" name="date" value="2025-01-20"
+                                class="w-full     px-3 py-2 rounded-lg focus:outline-none  " disabled>
+                        </div>
+
+                        <div>
+                            <label for="organizer" class="block text-sm font-medium text-gray-600 mb-1">Event Created
+                                By</label>
+                            <input type="text" id="organizer" name="organizer" value="AN Mamun"
+                                class="w-full  px-3 py-2 rounded-lg focus:outline-none " disabled>
+                        </div>
+
+                        <div>
+                            <label for="time" class="block text-sm font-medium text-gray-600 mb-1">Event Time</label>
+                            <input type="time" id="time" name="time" value="10:00"
+                                class="w-full    px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                disabled>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div>
+                        <label for="description"
+                            class="block text-sm font-medium text-gray-600 mb-1">Description</label>
+                        <textarea id="description" name="description" rows="6"
+                            class="w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
+                            disabled>Join us for a life-saving blood donation event!</textarea>
+                    </div>
+
+                </form>
+
+
+                <div>
+                    
+                    <form action="" id="accept-even-form"> 
+
+                        <!-- Description -->
+                        <div>
+                            <label for="description" class="block text-lg font-medium text-gray-700 mb-1">Donors Description </label>
+ 
+                            <textarea id="description" name="description" rows="6"
+                                class="w-full border border-[1px] border-gray-300 px-4 py-2 mt-4 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-500"
+                                placeholder="Write your thinking and accept for donate blood"></textarea>
+                        </div>
+                        
+
+
+                        <div class="flex gap-4 mt-4">
+                            <button type="submit" form="create-event-form"
+                                class="px-4 py-2 bg-green-500 text-white text-md  rounded hover:bg-teal-600">Accepted</button>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <!-- Donors Section -->
+            <div class="w-full col-span-4 bg-white shadow-md rounded-lg p-6">
+                <!-- Donor Count -->
+                <div class="mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Accepted Donors</h2>
+                    <p class="text-sm text-gray-600">Total Donors: <span id="total-donors"
+                            class="font-medium text-gray-800">3</span></p>
+                </div>
+
+                <!-- Donor List -->
+                <div class="h-96 overflow-y-auto">
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+                                A</div>
+                            <div>
+                                <p class="text-gray-800 font-medium">Alice Smith</p>
+                                <p class="text-gray-500 text-sm">Blood Group: A+</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 bg-red-500 text-white rounded-full flex items-center justify-center font-bold">
+                                B</div>
+                            <div>
+                                <p class="text-gray-800 font-medium">Bob Johnson</p>
+                                <p class="text-gray-500 text-sm">Blood Group: B-</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">
+                                O</div>
+                            <div>
+                                <p class="text-gray-800 font-medium">Olivia Brown</p>
+                                <p class="text-gray-500 text-sm">Blood Group: O+</p>
+                            </div>
+                        </li>
+                        <!-- Add more donor entries here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</main>
+
+
+
+
+
+
+
+    <footer></footer>
+
+
+    <script src="../src/js/header.js"></script>
+    <script src="../src/js/footer.js"></script>
+
+</body>
+
+</html>

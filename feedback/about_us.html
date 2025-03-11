@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> About Us </title>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="../src/images/data.doner_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Share+Tech+Mono&family=Space+Grotesk:wght@300..700&family=Teko:wght@300..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="bg-blue-50" style=" font-family: 'Jost', serif;">
+    <header class="z-10"> </header>
+
+
+
+
+
+    <div class="max-w-7xl mx-auto p-8 mt-12">
+        <div class="bg-white p-6 rounded-lg shadow-lg space-y-6">
+
+            <!-- Title Section -->
+            <section class="text-center">
+                <h1 class="text-4xl font-extrabold text-gray-800">About Us</h1>
+                <p class="text-lg text-gray-600 mt-4">Learn more about our mission, vision, and values.</p>
+            </section>
+
+            <!-- Content Section -->
+            <section class="md:flex gap-8">
+                <!-- Left Side Buttons -->
+                <div class="md:w-1/4 space-y-4 my-2">
+                    <!-- Button for Mission -->
+                    <button onclick="showContent(0)"
+                        class="button w-full text-left py-4 px-6 bg-gray-200 hover:bg-gray-300 rounded-lg text-gray-800 font-semibold">
+                        Our Mission
+                    </button>
+                    <!-- Button for Vision -->
+                    <button onclick="showContent(1)"
+                        class="button w-full text-left py-4 px-6 bg-gray-200 hover:bg-gray-300  hover:text-gray-800 rounded-lg text-gray-800 font-semibold">
+                        Our Vision
+                    </button>
+                    <!-- Button for Values -->
+                    <button onclick="showContent(2)"
+                        class="button w-full text-left py-4 px-6 bg-gray-200  hover:bg-gray-300  hover:text-gray-800 rounded-lg text-gray-800 font-semibold">
+                        Our Values
+                    </button>
+                    <!-- Button for Team -->
+                    <button onclick="showContent(3)"
+                        class="button w-full text-left py-4 px-6 bg-gray-200 hover:bg-gray-300  hover:text-gray-800 rounded-lg text-gray-800 font-semibold">
+                        Meet Our Team
+                    </button>
+                    <!-- Button for Contact -->
+                    <button onclick="showContent(4)"
+                        class="button w-full text-left py-4 px-6 bg-gray-200 hover:bg-gray-300  hover:text-gray-800 rounded-lg text-gray-800 font-semibold">
+                        Contact Us
+                    </button>
+                </div>
+
+                <!-- Right Side Content -->
+                <div class="md:w-3/4 my-2">
+                    <!-- Mission Content -->
+                    <div id="mission" class="content hidden px-6 py-4 text-gray-600">
+                        <h2 class="text-2xl font-semibold text-gray-800">Our Mission</h2>
+                        <p>
+                            Our mission is to provide an easy and reliable platform that connects people in need of
+                            blood with willing donors. We aim to save lives by ensuring that blood donations are quick,
+                            safe, and accessible for everyone.
+                        </p>
+                    </div>
+
+                    <!-- Vision Content -->
+                    <div id="vision" class="content hidden px-6 py-4 text-gray-600">
+                        <h2 class="text-2xl font-semibold text-gray-800">Our Vision</h2>
+                        <p>
+                            Our vision is to become the leading platform for blood donation worldwide, facilitating easy
+                            and quick access to blood resources for hospitals, clinics, and individuals in need. We
+                            envision a world where no one has to suffer due to a lack of blood donations.
+                        </p>
+                    </div>
+
+                    <!-- Values Content -->
+                    <div id="values" class="content hidden px-6 py-4 text-gray-600">
+                        <h2 class="text-2xl font-semibold text-gray-800">Our Values</h2>
+                        <ul class="list-disc pl-6">
+                            <li><strong>Compassion:</strong> We care deeply about helping people in need and providing
+                                support during critical times.</li>
+                            <li><strong>Transparency:</strong> We believe in open communication and clarity in all our
+                                actions.</li>
+                            <li><strong>Innovation:</strong> We constantly seek new ways to improve our platform and
+                                increase its impact.</li>
+                            <li><strong>Community:</strong> We are committed to creating a connected and supportive
+                                community of donors and recipients.</li>
+                            <li><strong>Integrity:</strong> We uphold the highest standards of ethics and
+                                professionalism in all our work.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Team Content -->
+                    <div id="team" class="content hidden px-6 py-4 text-gray-600">
+                        <h2 class="text-2xl font-semibold text-gray-800">Meet Our Team</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="text-center items-center justify-center">
+                                <img class="w-32 h-32 mx-auto rounded-full object-cover"
+                                    src="../src/images/profile_icon.png" alt="AN Mamun">
+                                <h3 class="mt-4 text-xl font-semibold text-gray-800">AN Mamun</h3>
+                                <p class="text-gray-600">Founder & CEO</p>
+                                <p class="text-gray-600 text-xs">A Software Engineer with 1+ years of experience in web
+                                    application development, specializing in Python and Django. Proficient in C++,
+                                    Python, MySQL, and web technologies, with expertise in scalable application design,
+                                    algorithm optimization, and solving 1,500+ problems on platforms like LeetCode,
+                                    CodeForces, and HackerRank. Focused on delivering efficient, high-quality solutions
+                                    and continuous learning.</p>
+
+                                <div class="flex items-center gap-4 text-gray-900 justify-center">
+                                    <!-- Twitter -->
+                                    <a href="https://www.x.com/anmamun0/" target="_blank"
+                                        class=" px-3 py-2 rounded-full transition duration-300">
+                                        <i class="fab fa-twitter "></i>
+                                    </a>
+                                    <!-- Facebook -->
+                                    <a href="https://www.facebook.com/anmamun0/" target="_blank"
+                                        class="px-3 py-2 rounded-full   transition duration-300">
+                                        <i class="fab fa-facebook-f  "></i>
+                                    </a>
+                                    <!-- LinkedIn -->
+                                    <a href="https://www.linkedin.com/in/anmamun0/" target="_blank"
+                                        class=" px-3 py-2 rounded-full  transition duration-300">
+                                        <i class="fab fa-linkedin-in "></i>
+                                    </a>
+                                    <a href="https://www.github.com/anmamun0/" target="_blank"
+                                        class=" px-3 py-2 rounded-full  transition duration-300">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img class="w-32 h-32 mx-auto rounded-full object-cover"
+                                    src="https://i.pravatar.cc/150" alt="Team Member 2">
+                                <h3 class="mt-4 text-xl font-semibold text-gray-800">Jane Smith</h3> 
+                                <p class="text-gray-600">Chief Technology Officer (CTO)</p>
+                                <p class="text-gray-600 text-xs">
+                                    A visionary technology leader with expertise in architecting scalable systems and driving innovation.  
+                                    With 5+ years of experience in backend and cloud technologies, specializes in system architecture,  
+                                    microservices, and DevOps. Passionate about leveraging AI and automation to enhance software efficiency  
+                                    while mentoring engineering teams to build cutting-edge solutions.
+                                </p>
+
+                            </div>
+                            <div class="text-center">
+                                <img class="w-32 h-32 mx-auto rounded-full object-cover"
+                                    src="https://i.pravatar.cc/150" alt="Team Member 3">
+                                <h3 class="mt-4 text-xl font-semibold text-gray-800">Sara Lee</h3>
+                                <p class="text-gray-600">Lead Developer</p> 
+                                <p class="text-gray-600 text-xs">
+                                    A results-driven software engineer with 3+ years of experience in full-stack development,  
+                                    specializing in Python, Django, React, and cloud platforms. Strong problem-solving skills,  
+                                    having solved 2,000+ algorithmic challenges on competitive programming platforms.  
+                                    Dedicated to writing clean, maintainable code and optimizing performance for high-traffic applications.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Content -->
+                    <div id="contact" class="content hidden px-6 py-4 text-gray-600">
+                        <h2 class="text-2xl font-semibold text-gray-800">Contact Us</h2>
+                        <p class="text-gray-600"><strong>Email:</strong> anmamun0@gmail.com</p>
+                        <p class="text-gray-600"><strong>Phone:</strong> +880 1782 059949</p>
+                        <p class="text-gray-600"><strong>Portfolio:</strong> <a href="https://anmamun0.vercel.app"
+                                class="text-red-600">anmamun0.vercel.app</a></p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer></footer>
+
+    <script src="../src/js/header.js"></script>
+    <script src="../src/js/footer.js"></script>
+
+    <script>
+        // Function to show content based on button click
+        function showContent(index) {
+            const allContents = document.querySelectorAll(".content");
+            const allButtons = document.querySelectorAll(".button");
+
+            allContents.forEach((content, i) => {
+                if (i === index) {
+                    content.classList.remove("hidden");
+                    allButtons[i].classList.add("bg-red-500", "text-white");
+                    allButtons[i].classList.remove("bg-gray-200", "text-gray-800");
+                } else {
+                    content.classList.add("hidden");
+                    allButtons[i].classList.add("bg-gray-200", "text-gray-800");
+                    allButtons[i].classList.remove("bg-red-500", "text-white");
+                }
+            });
+        }
+
+        // Initialize with first content visible
+        document.addEventListener('DOMContentLoaded', () => {
+            showContent(0);
+        });
+    </script>
+
+</body>
+
+</html>

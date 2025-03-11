@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Data.Doner - Events </title>
+  <link rel="stylesheet" href="src/css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/src/images/data.doner_icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Share+Tech+Mono&family=Space+Grotesk:wght@300..700&family=Teko:wght@300..700&display=swap"
+    rel="stylesheet">
+
+    <!-- aos animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <style>
+ 
+    </style>
+</head>
+
+<body class="bg-blue-50" style=" font-family: 'Jost', serif;">
+  <header class="z-10"> </header>
+
+
+  <main>
+
+    <div class="container mx-auto py-10 px-6 mt-12  rounded-xl">
+      <!-- Blood Group Summary -->
+      <div class="bg-white shadow-lg rounded-lg p-6 mb-12 pb-10 px-12">
+        <div class="md:flex justify-between pb-4 ">
+
+          <h2 class="text-sm sm:text-2xl  font-semibold text-gray-800  ">Recipient Blood Summary</h2>
+
+          <div class="flex gap-6 space-x-6 text-md  py-4 md:py-0 sm:justify-end">
+            <div class="search-event-container">
+              <label for="event-date" class="block text-xs sm:text-sm font-medium text-gray-600 px-2">Search Event by Date</label>
+              <div class=" flex flex-col sm:flex-row items-center gap-4 space-x-2">
+                <input type="date" id="event-date" name="event-date"
+                  class="w-full border text-xs sm:text-sm border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                  placeholder="Select a date">
+                
+                <div class="flex gap-4">
+                <button type="button" id="search-button"
+                  class="bg-red-600  relative inline-flex items-center justify-center overflow-hidden px-6 py-2  text-white text-sm px-4 py-2 shadow-md  rounded-lg hover:bg-red-600 transition-all duration-300 group">
+                  <span
+                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-full bg-white opacity-20 group-hover:translate-x-0"></span>
+                  <span class="relative">Search </span>
+                </button>
+
+                <button type="button" onclick="eventGenderator()" id="reset-filters"
+                  class="text-sm px-6 py-2 bg-gray-200 text-gray-700 rounded-lg shadow-md hover:bg-gray-300 transition duration-300">
+                  Reset
+                </button>
+              </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <h1 id="testing" class="hidden">Testing </h1>
+
+        <div class="grid grid-cols-2 md:grid-cols-4  text-center text-xs sm:text-sm gap-2 sm:gap-12 items-center  content-center sm:space-y-0"  data-aos="fade-up">
+          <!-- Single Blood Group Button -->
+          <button onclick="analysisEvent('A+')"
+            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
+            <h3 class="text-sm sm:text-xl font-bold text-red-600">A+</h3>
+            <p class="text-gray-700 ">8 Events</p>
+          </button>
+          <button onclick="analysisEvent('A-')"
+            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
+            <h3 class="text-sm sm:text-xl  font-bold text-red-600">A-</h3>
+            <p class="text-gray-700  ">5 Events</p>
+          </button>
+          <button onclick="analysisEvent('B+')"
+            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
+            <h3 class="text-sm sm:text-xl  font-bold text-red-600">B+</h3>
+            <p class="text-gray-700  ">10 Events</p>
+          </button>
+          <button onclick="analysisEvent('B-')"
+            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
+            <h3 class="text-sm sm:text-xl  font-bold text-red-600">B-</h3>
+            <p class="text-gray-700  ">2 Events</p>
+          </button>
+          <button onclick="analysisEvent('AB+')"
+            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
+            <h3 class="text-sm sm:text-xl  font-bold text-red-600">AB+</h3>
+            <p class="text-gray-700  ">2 Events</p>
+          </button>
+          <button onclick="analysisEvent('AB-')"
+            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
+            <h3 class="text-sm sm:text-xl  font-bold text-red-600">AB-</h3>
+            <p class="text-gray-700 ">2 Events</p>
+          </button>
+          <button onclick="analysisEvent('O+')"
+            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
+            <h3 class="text-sm sm:text-xl  font-bold text-red-600">O+</h3>
+            <p class="text-gray-700  ">2 Events</p>
+          </button>
+          <button onclick="analysisEvent('O-')"
+            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
+            <h3 class="text-sm sm:text-xl  font-bold text-red-600">O-</h3>
+            <p class="text-gray-700  ">2 Events</p>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Event List Header -->
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-md lg:text-3xl font-semibold text-gray-800">Blood Request Events</h2>
+        <a href="./create_event.html"
+          class="relative px-4 py-2 bg-red-600 text-white rounded-lg  overflow-hidden hover:bg-red-700 transition duration-300 group">
+          <span
+            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-full bg-white opacity-20 group-hover:translate-x-0"></span>
+          <span class="relative text-sm sm:text-md"> + Create Request </span>
+
+        </a>
+
+      </div>
+
+      <!-- Event Cards -->
+      <div id="events">
+        <div id="event_loading">
+          <!-- Loading Spinner -->
+          <div class="flex flex-col items-center">
+            <div class="w-16 h-16 border-4 border-gray-300 border-t-red-500 rounded-full animate-spin"></div>
+            <p class="mt-4 text-red-600 text-lg font-semibold">Loading...</p>
+          </div>
+        </div>
+        <!-- Single Event Card -->
+        <div id="event-cards" class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      
+        </div><!-- Single Event Card -->
+      </div>
+
+
+
+    </div>  
+  </main>
+
+ 
+
+  <div id="view_event_modal" class="hidden">
+
+  </div>
+
+  
+ 
+  <footer></footer>
+
+   <script src="src/js/header.js"></script>
+  <script src="src/js/footer.js"></script>
+  <script src="src/js/logout.js"></script>
+
+  <script src="src/js/event_blood.js"></script>
+
+  <script src="events/js/event_create.js"></script>
+  <!-- <script src="events/js/event_view.js"></script> -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+      AOS.init();
+  </script>
+</body> 
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<div class="bg-white rounded-lg shadow-lg p-6">
+  <h3 class="text-xl font-bold text-gray-800 mb-2">${event.title}</h3>
+  <p class="text-sm text-gray-600 mb-4">Location: ${event.location}</p>
+  <p class="text-sm text-gray-600 mb-4">Date: ${event.event_date}</p>
+  <p class="text-gray-700 mb-4">${event.title}</p>
+
+  <div class="flex items-center justify-between">
+    <span class="text-sm text-gray-500">Created by: <b>John Doe</b></span>
+ 
+    <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300">
+      Accept
+    </button>
+  </div>
+</div> -->

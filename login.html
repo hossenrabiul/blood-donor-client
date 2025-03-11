@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login </title>
+    <link rel="stylesheet" href="src/css/style.css"> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/src/images/data.doner_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Share+Tech+Mono&family=Space+Grotesk:wght@300..700&family=Teko:wght@300..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="bg-blue-50" style=" font-family: 'Jost', serif;">
+    <header class="z-10"> </header>
+
+
+
+    <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-8 m-auto my-8 px-12 mt-20">
+        <!-- Logo -->
+        <div class="text-center mb-6 ">
+            <img src="src/images/data.doner_icon.png" alt="Blood Bank Logo" class="mx-auto w-20 h-20 rounded-full shadow">
+            <h1 class="text-2xl font-bold mb-4 text-center">Login to Your Account</h1>
+            <div class="flex gap-2 text-center justify-center">
+                <p>Want a demo user?</p>
+                <a onclick="demoUser();event.preventDefault()" href="" class="px-4 bg-gray-300 hover:underline rounded">click</a>
+            </div>
+        </div>
+    
+        <form id="loginForm" class="space-y-4">
+            <div>
+                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                <input type="text" id="username" name="username"
+                    class="w-full mt-2 p-2 border border-gray-300 rounded-md text-gray-900 placeholder-gray-500 focus:border-teal-600 focus:outline-none hover:border-gray-400 transition-all duration-200 ease-in-out"
+                    required>
+            </div>
+            <div class="relative">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" name="password"
+                    class="w-full mt-2 p-2 border border-gray-300 rounded-md text-gray-900 placeholder-gray-500 focus:border-teal-600 focus:outline-none hover:border-gray-400 transition-all duration-200 ease-in-out pr-10"
+                    required>
+                <span id="togglePassword" class="absolute right-3 top-10 cursor-pointer text-gray-500 hover:text-gray-700">
+                    &#128065;
+                </span>
+            </div>
+
+           
+
+            <button type="submit"
+                class="w-full bg-red-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-red-700 transition duration-300">
+                Login
+            </button>
+        </form>
+        <p id="errorMsg" class="text-red-500 text-sm mt-4 hidden"></p>
+    
+        <!-- Footer -->
+        <div class="text-center mt-6">
+            <p class="text-sm text-gray-600">
+                Don't have an account?
+                <a href="/register.html" class="text-red-500 font-medium hover:underline">Register Now</a>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById("togglePassword").addEventListener("click", function () {
+            const passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        });
+    </script>
+    
+
+
+
+
+
+
+    <footer></footer>
+
+
+    <script src="src/js/header.js"></script>
+    <script src="src/js/footer.js"></script>
+    <script src="src/js/login.js"> </script>
+
+
+</body>
+
+</html>
