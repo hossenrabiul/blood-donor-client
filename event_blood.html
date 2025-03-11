@@ -30,123 +30,58 @@
 <body class="bg-blue-50" style=" font-family: 'Jost', serif;">
   <header class="z-10"> </header>
 
-
   <main>
-
-    <div class="container mx-auto py-10 px-6 mt-12  rounded-xl">
-      <!-- Blood Group Summary -->
-      <div class="bg-white shadow-lg rounded-lg p-6 mb-12 pb-10 px-12">
-        <div class="md:flex justify-between pb-4 ">
-
-          <h2 class="text-sm sm:text-2xl  font-semibold text-gray-800  ">Recipient Blood Summary</h2>
-
-          <div class="flex gap-6 space-x-6 text-md  py-4 md:py-0 sm:justify-end">
-            <div class="search-event-container">
-              <label for="event-date" class="block text-xs sm:text-sm font-medium text-gray-600 px-2">Search Event by Date</label>
-              <div class=" flex flex-col sm:flex-row items-center gap-4 space-x-2">
-                <input type="date" id="event-date" name="event-date"
-                  class="w-full border text-xs sm:text-sm border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-                  placeholder="Select a date">
-                
-                <div class="flex gap-4">
-                <button type="button" id="search-button"
-                  class="bg-red-600  relative inline-flex items-center justify-center overflow-hidden px-6 py-2  text-white text-sm px-4 py-2 shadow-md  rounded-lg hover:bg-red-600 transition-all duration-300 group">
-                  <span
-                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-full bg-white opacity-20 group-hover:translate-x-0"></span>
-                  <span class="relative">Search </span>
-                </button>
-
-                <button type="button" onclick="eventGenderator()" id="reset-filters"
-                  class="text-sm px-6 py-2 bg-gray-200 text-gray-700 rounded-lg shadow-md hover:bg-gray-300 transition duration-300">
-                  Reset
-                </button>
-              </div>
-              </div>
+    <div class="container mx-auto py-12 px-8 mt-10 bg-gradient-to-r from-blue-50 to-blue-100 shadow-2xl rounded-3xl">
+        <!-- Blood Group Summary -->
+        <div class="bg-white shadow-lg rounded-2xl p-10 mb-12 border-t-4 border-blue-500">
+            <div class="md:flex justify-between pb-6 border-b border-gray-300">
+                <h2 class="text-2xl font-extrabold text-gray-900">Blood Donation Overview</h2>
+                <div class="flex gap-4 text-md py-4 md:py-0 sm:justify-end">
+                    <div class="search-event-container">
+                        <label for="event-date" class="block text-md font-semibold text-gray-700">Find Event by Date</label>
+                        <div class="flex flex-col sm:flex-row items-center gap-4">
+                            <input type="date" id="event-date" name="event-date" class="w-full border border-gray-400 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 shadow-sm">
+                            <button type="button" id="search-button" class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-2 rounded-lg shadow-lg hover:from-blue-600 hover:to-blue-800 transition duration-300">Search</button>
+                            <button type="button" onclick="eventGenderator()" id="reset-filters" class="text-gray-700 bg-gray-300 px-6 py-2 rounded-lg shadow-md hover:bg-gray-400 transition duration-300">Reset</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-          </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6 text-center" data-aos="fade-up">
+                <button onclick="analysisEvent('A+')" class="bg-blue-200 hover:bg-blue-300 p-6 rounded-xl transition duration-300 shadow-lg transform hover:scale-105">
+                    <h3 class="text-xl font-bold text-blue-700">A+</h3>
+                    <p class="text-gray-700 font-medium">12 Events</p>
+                </button>
+                <button onclick="analysisEvent('A-')" class="bg-blue-200 hover:bg-blue-300 p-6 rounded-xl transition duration-300 shadow-lg transform hover:scale-105">
+                    <h3 class="text-xl font-bold text-blue-700">A-</h3>
+                    <p class="text-gray-700 font-medium">4 Events</p>
+                </button>
+                <button onclick="analysisEvent('B+')" class="bg-blue-200 hover:bg-blue-300 p-6 rounded-xl transition duration-300 shadow-lg transform hover:scale-105">
+                    <h3 class="text-xl font-bold text-blue-700">B+</h3>
+                    <p class="text-gray-700 font-medium">9 Events</p>
+                </button>
+                <button onclick="analysisEvent('B-')" class="bg-blue-200 hover:bg-blue-300 p-6 rounded-xl transition duration-300 shadow-lg transform hover:scale-105">
+                    <h3 class="text-xl font-bold text-blue-700">B-</h3>
+                    <p class="text-gray-700 font-medium">3 Events</p>
+                </button>
+            </div>
         </div>
-
-        <h1 id="testing" class="hidden">Testing </h1>
-
-        <div class="grid grid-cols-2 md:grid-cols-4  text-center text-xs sm:text-sm gap-2 sm:gap-12 items-center  content-center sm:space-y-0"  data-aos="fade-up">
-          <!-- Single Blood Group Button -->
-          <button onclick="analysisEvent('A+')"
-            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
-            <h3 class="text-sm sm:text-xl font-bold text-red-600">A+</h3>
-            <p class="text-gray-700 ">8 Events</p>
-          </button>
-          <button onclick="analysisEvent('A-')"
-            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
-            <h3 class="text-sm sm:text-xl  font-bold text-red-600">A-</h3>
-            <p class="text-gray-700  ">5 Events</p>
-          </button>
-          <button onclick="analysisEvent('B+')"
-            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
-            <h3 class="text-sm sm:text-xl  font-bold text-red-600">B+</h3>
-            <p class="text-gray-700  ">10 Events</p>
-          </button>
-          <button onclick="analysisEvent('B-')"
-            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
-            <h3 class="text-sm sm:text-xl  font-bold text-red-600">B-</h3>
-            <p class="text-gray-700  ">2 Events</p>
-          </button>
-          <button onclick="analysisEvent('AB+')"
-            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
-            <h3 class="text-sm sm:text-xl  font-bold text-red-600">AB+</h3>
-            <p class="text-gray-700  ">2 Events</p>
-          </button>
-          <button onclick="analysisEvent('AB-')"
-            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
-            <h3 class="text-sm sm:text-xl  font-bold text-red-600">AB-</h3>
-            <p class="text-gray-700 ">2 Events</p>
-          </button>
-          <button onclick="analysisEvent('O+')"
-            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
-            <h3 class="text-sm sm:text-xl  font-bold text-red-600">O+</h3>
-            <p class="text-gray-700  ">2 Events</p>
-          </button>
-          <button onclick="analysisEvent('O-')"
-            class="bg-gray-100 hover:scale-105 border-[1px] border-transparent hover:border-gray-400 p-4 rounded-lg text-center transition duration-300">
-            <h3 class="text-sm sm:text-xl  font-bold text-red-600">O-</h3>
-            <p class="text-gray-700  ">2 Events</p>
-          </button>
+        <!-- Event List Header -->
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-extrabold text-gray-900">Ongoing Blood Donation Events</h2>
+            <a href="./create_event.html" class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-3 rounded-lg shadow-lg hover:from-blue-600 hover:to-blue-800 transition duration-300">+ Create Event</a>
         </div>
-
-      </div>
-
-      <!-- Event List Header -->
-      <div class="flex justify-between items-center mb-6">
-        <h2 class="text-md lg:text-3xl font-semibold text-gray-800">Blood Request Events</h2>
-        <a href="./create_event.html"
-          class="relative px-4 py-2 bg-red-600 text-white rounded-lg  overflow-hidden hover:bg-red-700 transition duration-300 group">
-          <span
-            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-full bg-white opacity-20 group-hover:translate-x-0"></span>
-          <span class="relative text-sm sm:text-md"> + Create Request </span>
-
-        </a>
-
-      </div>
-
-      <!-- Event Cards -->
-      <div id="events">
-        <div id="event_loading">
-          <!-- Loading Spinner -->
-          <div class="flex flex-col items-center">
-            <div class="w-16 h-16 border-4 border-gray-300 border-t-red-500 rounded-full animate-spin"></div>
-            <p class="mt-4 text-red-600 text-lg font-semibold">Loading...</p>
-          </div>
+        <!-- Event Cards -->
+        <div id="events">
+            <div id="event_loading" class="flex flex-col items-center">
+                <div class="w-14 h-14 border-4 border-gray-300 border-t-blue-600 rounded-full animate-spin"></div>
+                <p class="mt-4 text-blue-700 font-semibold">Fetching Events...</p>
+            </div>
+            <div id="event-cards" class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            </div>
         </div>
-        <!-- Single Event Card -->
-        <div id="event-cards" class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      
-        </div><!-- Single Event Card -->
-      </div>
-
-
-
-    </div>  
-  </main>
+    </div>
+</main>
 
  
 
